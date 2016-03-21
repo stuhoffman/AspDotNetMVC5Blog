@@ -36,17 +36,15 @@ namespace AspNetBlog.Controllers
             db.Posts.Add(post);
             await db.SaveChangesAsync();
 
-             return View();
+            return RedirectToAction("Post", new { id = post.Id });
         }
 
         public IActionResult Post(long id)
         {
-            var post = new Post();
+            var db = new BlogDataContext();
 
-            post.Title = "My Blog Post";
-            post.PostedDate = DateTime.Now;
-            post.Author = "Stu Hoffman";
-            post.Body = "This is the first blog post about ASP.NET MVC 5";
+            var post = db.Posts.SingleOrDefault(x => x.Id == id); 
+
             return View(post);
         }
 
