@@ -178,8 +178,3 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
-
-.field-validation-error,
-.validation-summary-errors {
-    color: #a94442;
-}

@@ -1,20 +1,55 @@
-﻿@model AspNetBlog.Models.Post[]
-
-
-@foreach (var post in Model)
-{
-    @Html.Partial("_Post", post)
+﻿@{
+    Layout = "_Layout";
 }
 
-<nav>
-    <ul class="pager">
-        @if (ViewBag.HasPreviousPage == true)
-        {
-            <li><a href="@Url.Action("Index", new { page = ViewBag.PreviousPage })">Previous</a></li>
-        }
-        @if (ViewBag.HasNextPage == true)
-        {
-            <li><a href="@Url.Action("Index", new { page = ViewBag.NextPage })">Next</a></li>
-        }
-    </ul>
-</nav>
+
+
+                <div class='blog-post'>
+                    <h2 class='title'>
+                        <a href="#">Setting up your development environment</a>
+                    </h2>
+                    <p class='metadata'>
+                        <span>June 10th, 2012</span>
+                        by <a class="author" href='#'>Stu</a>
+                    </p>
+                    <section class="body">
+                        <p>
+                            What to install?
+
+                            <ul>
+                                <li>Windows 7 or Windows Server 2008 R2 and above</li>
+                                <li>Visual Studio 2015 (Community Edition or above)</li>
+                                <li>Web Essentials Visual Studio extension</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Once you have those things installed, come on back for the
+                            next blog post and we'll start creating your new project!
+                        </p>
+                    </section>
+                </div><!-- /.blog-post -->
+
+                <div class='blog-post'>
+                    <h2 class='title'>
+                        <a href="#">Welcome to my blog!</a>
+                    </h2>
+                    <p class='metadata'>
+                        <span>June 17th, 2012</span>
+                        by <a class="author" href='#'>Stu</a>
+                    </p>
+                    <section class="body">
+                        <p>Hello, and welcome to my blog!</p>
+                        <p>
+                            Blah blah, blah blah blah
+                        </p>
+                    </section>
+                </div><!-- /.blog-post -->
+
+                <nav class="hide">
+                    <ul class="pager">
+                        <li><a href="#">Previous</a></li>
+                        <li><a href="#">Next</a></li>
+                    </ul>
+                </nav>
+
+ 
