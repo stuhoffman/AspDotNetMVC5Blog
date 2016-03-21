@@ -14,39 +14,23 @@ namespace AspNetBlog.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            Post[] posts = {
-                new Post
-                {
-                Title = "My Blog Post #1",
-                PostedDate = DateTime.Now,
-                Author = "Stu Hoffman",
-                Body = "This is the first blog post about ASP.NET MVC 5",
-                },
-                new Post
-                {
-                    Title = "My Blog Post #2",
-                    PostedDate = DateTime.Now,
-                    Author = "Stu Hoffman",
-                    Body = "This is the first blog post about ASP.NET MVC 5",
-                },
-                new Post
-                {
-                    Title = "My Blog Post #3",
-                    PostedDate = DateTime.Now,
-                    Author = "Stu Hoffman",
-                    Body = "This is the first blog post about ASP.NET MVC 5",
-                }
-
-            };
-            return View(posts);
+             return View();
         }
 
- 
+        public IActionResult Error()
+        {
+            return View();
+        }
+
         public string Echo(string id)
         {
             return id;
         }
 
+        public IActionResult CauseAnError()
+        {
+            throw new Exception("Error!");
+        }
     }
 
 }
