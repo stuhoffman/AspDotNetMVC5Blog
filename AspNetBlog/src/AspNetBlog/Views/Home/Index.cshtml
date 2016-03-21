@@ -1,50 +1,14 @@
-﻿@{
+﻿@model AspNetBlog.Models.Post[]
+@{
     Layout = "_Layout";
 }
 
 
 
-                <div class='blog-post'>
-                    <h2 class='title'>
-                        <a href="#">Setting up your development environment</a>
-                    </h2>
-                    <p class='metadata'>
-                        <span>June 10th, 2012</span>
-                        by <a class="author" href='#'>Stu</a>
-                    </p>
-                    <section class="body">
-                        <p>
-                            What to install?
-
-                            <ul>
-                                <li>Windows 7 or Windows Server 2008 R2 and above</li>
-                                <li>Visual Studio 2015 (Community Edition or above)</li>
-                                <li>Web Essentials Visual Studio extension</li>
-                            </ul>
-                        </p>
-                        <p>
-                            Once you have those things installed, come on back for the
-                            next blog post and we'll start creating your new project!
-                        </p>
-                    </section>
-                </div><!-- /.blog-post -->
-
-                <div class='blog-post'>
-                    <h2 class='title'>
-                        <a href="#">Welcome to my blog!</a>
-                    </h2>
-                    <p class='metadata'>
-                        <span>June 17th, 2012</span>
-                        by <a class="author" href='#'>Stu</a>
-                    </p>
-                    <section class="body">
-                        <p>Hello, and welcome to my blog!</p>
-                        <p>
-                            Blah blah, blah blah blah
-                        </p>
-                    </section>
-                </div><!-- /.blog-post -->
-
+@foreach (var post in Model)
+{
+    @Html.Partial("_Post", post)
+}
                 <nav class="hide">
                     <ul class="pager">
                         <li><a href="#">Previous</a></li>
