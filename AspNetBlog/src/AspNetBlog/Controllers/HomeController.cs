@@ -41,17 +41,7 @@ namespace AspNetBlog.Controllers
             return View(posts);
         }
 
-        public IActionResult Post(long id)
-        {
-            var post = new Post();
-
-            post.Title = "My Blog Post";
-            post.PostedDate = DateTime.Now;
-            post.Author = "Stu Hoffman";
-            post.Body = "This is the first blog post about ASP.NET MVC 5";
-            return View(post);
-        }
-
+ 
         public string Echo(string id)
         {
             return id;
