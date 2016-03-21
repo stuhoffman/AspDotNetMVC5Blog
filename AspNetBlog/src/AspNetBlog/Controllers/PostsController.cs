@@ -23,19 +23,13 @@ namespace AspNetBlog.Controllers
             return View();
         }
 
-        public class CreatePostRequest
+         [HttpPost]
+        public IActionResult Create(Post post)
         {
-            public string Title { get; set; }
-            public string Body { get; set; }
-        }
-        [HttpPost]
-        public IActionResult Create(CreatePostRequest request)
-        {
-            var post = new Post();
-            post.Title = request.Title;
-            post.Body = request.Body;
+            post.PostedDate = DateTime.Now;
+            post.Author = User.Identity.Name;
 
-            return View();
+             return View();
         }
 
         public IActionResult Post(long id)
