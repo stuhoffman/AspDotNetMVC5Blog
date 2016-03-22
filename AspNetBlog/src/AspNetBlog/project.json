@@ -11,6 +11,7 @@
     "EntityFramework.SqlServer": "7.0.0-beta4",
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta4",
     "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+    "Microsoft.Framework.ConfigurationModel.UserSecrets": "1.0.0-beta4",
     "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
   },
 
@@ -34,5 +35,6 @@
     "wwwroot",
     "node_modules",
     "bower_components"
-  ]
+  ],
+  "userSecretsId": "aspnet5-AspNetBlog-20160321053923"
 }

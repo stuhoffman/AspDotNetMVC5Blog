@@ -23,6 +23,10 @@ namespace AspNetBlog
             config.AddEnvironmentVariables();
             config.AddJsonFile("config.json");
             config.AddJsonFile("config.dev.json", true);
+            config.AddUserSecrets();
+
+            var password = config.Get("password");
+
             
             if (config.Get<bool>("debug"))
             {
