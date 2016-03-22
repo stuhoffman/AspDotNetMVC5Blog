@@ -21,9 +21,10 @@ namespace AspNetBlog
         {
             var config = new Configuration();
             config.AddEnvironmentVariables();
-            config.AddIniFile("config.ini");
+            config.AddJsonFile("config.json");
+            config.AddJsonFile("config.dev.json", true);
             
-            if (config.Get("debug") == "True")
+            if (config.Get<bool>("debug"))
             {
                 app.UseErrorPage();
                 app.UseRuntimeInfoPage();
